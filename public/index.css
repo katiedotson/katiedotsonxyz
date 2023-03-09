@@ -1,0 +1,83 @@
+
+/**
+
+ blue 1 : #110e1c
+ blue 2 : #17132b
+
+ white 1: #eee
+ white 2: #aaa
+
+**/
+
+body {
+    background: #110e1c;
+    color: #eee;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  h1 {
+    margin: 42vh auto;
+    text-align: center;
+  }
+
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #17132b;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #aaa;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidebar li {
+      text-decoration: none;
+      display: block;
+  }
+  
+  .sidebar a:hover {
+    color: #eee;
+  }
+  
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  .openbtn {
+      background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #eee;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  #main {
+    transition: margin-left .5s;
+    padding: 16px;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+    }
