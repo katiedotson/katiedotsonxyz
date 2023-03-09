@@ -9,24 +9,33 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;500;600&family=Marck+Script&family=VT323&display=swap"
     rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <title>Katie Dotson</title>
-  <style>
-    body {
-      background: #110e1c;
-      color: #eee;
-      font-family: 'IBM Plex Mono', monospace;
-    }
-    h1 {
-      margin: 42vh auto;
-      text-align: center;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-  <h1>Katie Dotson</h1>
+  <div id="main">
+    <button class="openbtn" @click="openNav">☰</button>
+    <div class="sidebar" id="sidebar">
+      <a href="javascript:void(0)" class="closebtn" @click="closeNav">×</a>
+      <nav>
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#music">music</a></li>
+          <li><a href="#code">code</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="home" v-if="currentView == ''">
+      <h1>Katie Dotson</h1>
+    </div>
+    <div id="music" v-if="currentView == 'music'">{{message}}</div>
+    <div id="code" v-if="currentView == 'code'">{{message}}</div>
+  </div>
 
 </body>
+<script src="index.js"></script>
 
 </html>
