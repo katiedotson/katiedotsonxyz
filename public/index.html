@@ -23,20 +23,49 @@
       <button class="closebtn" @click="closeNav">×</button>
       <nav>
         <ul>
-          <li><a href="#">home</a></li>
+          <li><a href="#">#</a></li>
           <li><a href="#music">music</a></li>
           <li><a href="#code">code</a></li>
         </ul>
       </nav>
     </div>
-    <div id="home" v-if="currentView == ''">
-      <h1>Katie Dotson</h1>
+    <div class="topnavbar" id="topnavbar">
+      <nav>
+        <ul>
+          <li :class="{ active: currentView == '' }"><a href="#">#</a></li>
+          <li :class="{ active: currentView == 'music' }"><a href="#music">music</a></li>
+          <li :class="{ active: currentView == 'code' }"><a href="#code">code</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="music" v-if="currentView == 'music'">{{message}}</div>
-    <div id="code" v-if="currentView == 'code'">{{message}}</div>
+    <div id="home" v-if="currentView == ''">
+      <h1 class="home">Katie Dotson</h1>
+    </div>
+    <div id="music" v-if="currentView == 'music'">
+      <h1>{{heading}}</h1>
+      <div id="sites">
+        <div class="site" v-for="site in sites">
+          <h3>{{site.name}}</h3>
+          <a :href="site.url" target="new">Check it out &nearr;</a>
+          <img :src="site.icon" />
+        </div>
+      </div>
+    </div>
+    <div id="code" v-if="currentView == 'code'">
+      <h1>{{heading}}</h1>
+      <div id="sites">
+        <div class="site" v-for="site in sites">
+          <h3>{{site.name}}</h3>
+          <a :href="site.url" target="new">Check it out &nearr;</a>
+          <img :src="site.icon" />
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
 </body>
+<script src="data.js"></script>
 <script src="index.js"></script>
 
 </html>
