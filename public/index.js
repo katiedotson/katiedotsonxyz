@@ -1,18 +1,10 @@
 const { createApp } = Vue
 
-
 createApp({
     data() {
         return {
-            message: "home"
-        }
-    }
-}).mount("#home")
-
-createApp({
-    data() {
-        return {
-            message: "music"
+            heading: data.music.heading,
+            sites: data.music.sites
         }
     }
 }).mount("#music")
@@ -20,7 +12,8 @@ createApp({
 createApp({
     data() {
         return {
-            message: "code"
+            heading: data.code.heading,
+            sites: data.code.sites
         }
     }
 }).mount("#code")
@@ -28,14 +21,11 @@ createApp({
 createApp({
     methods: {
         openNav() {
-            document.getElementById("sidebar").style.width = "250px";
+            document.getElementById("sidebar").style.width = "250px"
         },
         closeNav() {
-            document.getElementById("sidebar").style.width = "0";
+            document.getElementById("sidebar").style.width = "0"
         },
-        hashChanged(event) {
-            console.log(event)
-        }
     },
     computed: {
         currentView() {
