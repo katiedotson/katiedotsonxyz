@@ -46,6 +46,9 @@
       </div>
     </div>
     <div id="home" v-if="currentView == ''">
+      <div class="boxes">
+        <div v-for="box in boxes" class="box" @mouseover="colorBox"></div>
+      </div>
       <h1 class="home">Katie Dotson</h1>
       <p>Hi. I'm Katie, and this is my website. I like to write code and make music. Here, you can find some of the work
         I've done.</p>

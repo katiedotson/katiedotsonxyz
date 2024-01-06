@@ -37,6 +37,21 @@ p {
     text-align: center;
 }
 
+.boxes {
+    border: 1px solid #1870be;
+    display: flex;
+    width: 100px;
+    margin: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.box {
+    background-color: black;
+    height: 50px;
+    width: 50px;
+}
+
 /* sidebar */
 .sidebar {
     height: 100%;
