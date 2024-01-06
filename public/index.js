@@ -26,6 +26,17 @@ createApp({
         closeNav() {
             document.getElementById("sidebar").style.width = "0"
         },
+        colorBox(t) {
+            t.target.style["background-color"] = this.randomColor()
+        },
+        randomColor() {
+            let values = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += values[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
     },
     computed: {
         currentView() {
@@ -34,7 +45,8 @@ createApp({
     },
     data() {
         return {
-            currentPath: window.location.hash
+            currentPath: window.location.hash,
+            boxes: [{}, {}, {}, {},]
         }
     },
     mounted() {
