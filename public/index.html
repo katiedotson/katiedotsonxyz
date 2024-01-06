@@ -9,37 +9,46 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;300;500;600&family=Marck+Script&family=VT323&display=swap"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <title>Katie Dotson</title>
   <meta name="description" content="Katie Dotson's website.">
   <link rel="stylesheet" href="index.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
 
   <div id="main">
-    <button class="openbtn" @click="openNav">☰</button>
-    <div class="sidebar" id="sidebar">
-      <button class="closebtn" @click="closeNav">×</button>
-      <nav>
-        <ul>
-          <li><a href="#">#</a></li>
-          <li><a href="#music">music</a></li>
-          <li><a href="#code">code</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="topnavbar" id="topnavbar">
-      <nav>
-        <ul>
-          <li :class="{ active: currentView == '' }"><a href="#">#</a></li>
-          <li :class="{ active: currentView == 'music' }"><a href="#music">music</a></li>
-          <li :class="{ active: currentView == 'code' }"><a href="#code">code</a></li>
-        </ul>
-      </nav>
+    <div id="nav">
+      <button class="openbtn" @click="openNav">☰</button>
+      <div class="sidebar" id="sidebar">
+        <button class="closebtn" @click="closeNav">×</button>
+        <nav>
+          <ul>
+            <li><a href="#">#</a></li>
+            <li><a href="#music">music</a></li>
+            <li><a href="#code">code</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="topnavbar" id="topnavbar">
+        <nav>
+          <ul>
+            <li :class="{ active: currentView == '' }"><a href="#">#</a></li>
+            <li :class="{ active: currentView == 'music' }"><a href="#music">music</a></li>
+            <li :class="{ active: currentView == 'code' }"><a href="#code">code</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
     <div id="home" v-if="currentView == ''">
       <h1 class="home">Katie Dotson</h1>
+      <p>Hi. I'm Katie, and this is my website. I like to write code and make music. Here, you can find some of the work
+        I've done.</p>
     </div>
     <div id="music" v-if="currentView == 'music'">
       <h1>{{heading}}</h1>
@@ -48,6 +57,7 @@
           <h3>{{site.name}}</h3>
           <a :href="site.url" target="new">Check it out &nearr;</a>
           <img :src="site.icon" />
+          <p :if="site.about">{{site.about}}</p>
         </div>
       </div>
     </div>
@@ -58,6 +68,7 @@
           <h3>{{site.name}}</h3>
           <a :href="site.url" target="new">Check it out &nearr;</a>
           <img :src="site.icon" />
+          <p :if="site.about">{{site.about}}</p>
         </div>
       </div>
     </div>

@@ -14,11 +14,25 @@ body {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+p {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+#nav {
+    padding: 1em;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #110e1c;
+    border-bottom: 1px solid #1870be;
+}
+
 #main {
     padding: 1em;
 }
 
-h1.home {
+#home {
     margin: 42vh auto;
     text-align: center;
 }
@@ -87,17 +101,18 @@ h1.home {
 .topnavbar ul li a {
     text-decoration: none;
     text-decoration: none;
-    color: #aaa;
+    color: #eee;
     display: block;
     transition: 0.3s;
 }
 
 .topnavbar ul li a:hover {
-    color: #eee;
+    color: #1870be;
 }
 
 .topnavbar ul li.active {
     text-decoration: underline;
+    text-decoration-color: #1870be;
 }
 
 .topnavbar ul li:not(:first-child) {
@@ -106,7 +121,7 @@ h1.home {
 
 /* sites */
 #sites {
-    max-width: 400px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -114,16 +129,18 @@ h1.home {
     display: grid;
     grid-template-areas:
         'header header header'
-        'link link logo';
+        'link link logo'
+        'about about about';
     gap: 10px;
     padding: 1em;
-    border: 1px solid #aaa;
+    border: 1px solid #1870be;
     border-radius: 4px;
     margin-bottom: 1em;
     align-items: center;
 }
 
 #sites div.site h3 {
+    font-size: xx-large;
     grid-area: header;
     margin-top: 0;
 }
@@ -131,15 +148,22 @@ h1.home {
 #sites div.site a {
     grid-area: link;
     color: #eee;
+    width: fit-content;
 }
 
 #sites div.site a:hover {
-    color: rgb(213, 238, 75);
+    color: #1870be;
 }
 
 #sites div.site img {
     max-width: 100px;
     grid-area: logo;
+    margin: 0 auto;
+    padding: 2em;
+}
+
+#sites div.site p {
+    grid-area: about;
 }
 
 /**
@@ -147,24 +171,6 @@ h1.home {
     Media queries
 
 **/
-
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 15px;
-    }
-
-    .sidebar a {
-        font-size: 18px;
-    }
-
-    .sidebar {
-        display: block;
-    }
-
-    .openbtn {
-        display: block;
-    }
-}
 
 
 /* Extra small devices (phones, 600px and down) */
@@ -179,6 +185,10 @@ h1.home {
 
     .openbtn {
         display: block;
+    }
+
+    h1 {
+        margin-top: 2em;
     }
 }
 
@@ -195,6 +205,10 @@ h1.home {
 
     .openbtn {
         display: block;
+    }
+
+    h1 {
+        margin-top: 2em;
     }
 }
 
